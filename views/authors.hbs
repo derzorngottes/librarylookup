@@ -1,0 +1,29 @@
+<div class='sidebar'>
+  <div class='authors-div'>
+    <a href='/authors'>Authors</a>
+    <p>Book</p>
+  </div>
+
+  <div class='books-div'>
+    <a href='/books'>Books</a>
+    <p>Person</p>
+  </div>
+
+</div>
+
+<div class='button-box'>
+  <a href='/books/new'>New</a>
+</div>
+
+<div class='booklist'>
+  {{#each authors}}
+  <div class='author'>
+    <div class='authorlist-content' id='picture'>
+      <img src='{{this.portraiturl}}' height='100' class='authors-pic'/>
+    </div>
+    <div class='authorslist-content' id='content'>
+      <a href='/authors/{{this.id}}' class='authors-name'>{{this.firstname}} {{this.lastname}}</a>
+      <p class='authors-bio'>{{this.bio}}</p>
+    </div>
+  </div>
+</div>

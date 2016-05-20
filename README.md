@@ -1,6 +1,6 @@
 #### Library Lookup ####
 
-##### Note: this project is the result of a conversion from Jade to Handlebars/Bootstrap and should be considered in development at this time. #####
+##### Note: this project is the result of a conversion from Jade to Handlebars/Bootstrap and should be considered in development at this time. It is cloned from the project Library_Lookup. #####
 
 A library lookup app for programming books. Users can add, edit and remove books and authors.
 
