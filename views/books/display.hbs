@@ -1,0 +1,47 @@
+<div class='sidebar'>
+  <div class='authors-div'>
+    <a href='/authors'>Authors</a>
+    <p>Book</p>
+  </div>
+
+  <div class='books-div'>
+    <a href='/books'>Books</a>
+    <p>Person</p>
+  </div>
+</div>
+
+<div class='button-box'>
+  <a href='/books/new'>New</a>
+</div>
+
+<div class='displayBook'>
+  {{#if genre}}
+    {{#each booksByGenre}}
+      <h1>Title: {{this[0].title}}</h1>
+      <h1>Genre: {{this[0].genre}}</h1>
+      <h1>Authors: {{this[1]}}</h1>
+      <p>Description: {{this[0].description}}</p>
+  {{/if}}
+
+  {{#unless genre}}
+    <h1>Title: {{thisBook[0].title}}</h1>
+    <h1>Genre: {{thisBook[0].genre}}</h1>
+    <h1>Authors:
+      {{#each thisBook[1]}}
+      <p class='byliner'>{{this}}
+    </h1>
+    <p>Description: {{thisBook[0].description}}</p>
+  {{/unless}}
+
+  <form action='/edit', method='post'>
+    <a href='/books/' + {{thisBook[0].bookid}} + '/edit'>Edit</a>
+  </form>
+
+  <form action='/delete', method='post'>
+    <a href='/books/' + {{thisBook[0].bookid}} + '/delete'>Delete</a>
+  </form>
+
+  <form action='/', method='get'>
+    <a href='/books/'>Back</a>
+  </form>
+</div>
